@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Perfiles - Inicio</title>
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+<header>
+  <h1>UNIVERSIDAD NACIONAL, CAMPUS NICOYA</h1>
+</header>
+
+<div class="container">
+  <div id="pantallaInicio" class="perfiles">
+    <div class="perfil-card" data-usuario="wayner">
+      <img src="img/Wayner.jpg" alt="Foto de Wayner" />
+      <h3>Wayner Díaz Mora</h3>
+      <p>Estudiante de Ingeniería en Sistemas </p>
+    </div>
+    <div class="perfil-card" data-usuario="johana">
+      <img src="img/Johana.jpg" alt="Foto de Johana" />
+      <h3>Johana Agüero Serrano</h3>
+      <p>Estudiante de Ingeniería en Sistemas</p>
+    </div>
+  </div>
+
+  <div id="detallePerfil">
+    <button id="btnVolver">Volver</button>
+    <h2 id="nombreUsuario">Nombre Usuario</h2>
+
+    <nav class="interno">
+      <button data-seccion="presentacion">Presentación</button>
+      <button data-seccion="educacion">Educación</button>
+      <button data-seccion="habilidades">Habilidades</button>
+      <button data-seccion="experiencia">Experiencia</button>
+      <button data-seccion="idiomas">Idiomas</button>
+      <button data-seccion="portafolio">Portafolio</button>
+      <button data-seccion="contacto">Contacto</button>
+    </nav>
+
+    <section id="presentacion" class="seccion-perfil">
+      <h3>Presentación</h3>
+      <p></p>
+    </section>
+    <section id="educacion" class="seccion-perfil">
+      <h3>Educación</h3>
+      <ul></ul>
+    </section>
+    <section id="habilidades" class="seccion-perfil">
+      <h3>Habilidades</h3>
+      <ul></ul>
+    </section>
+    <section id="experiencia" class="seccion-perfil">
+      <h3>Experiencia</h3>
+      <ul></ul>
+    </section>
+    <section id="idiomas" class="seccion-perfil">
+      <h3>Idiomas</h3>
+      <ul></ul>
+    </section>
+    <section id="portafolio" class="seccion-perfil">
+      <h3>Portafolio de Proyectos</h3>
+      <ul></ul>
+    </section>
+    <section id="contacto" class="seccion-perfil">
+      <h3>Formulario de Contacto</h3>
+      <form id="form-contacto">
+        <input type="text" name="nombre" placeholder="Tu nombre" required />
+        <input type="email" name="email" placeholder="Tu correo" required />
+        <textarea name="mensaje" placeholder="Tu mensaje" required></textarea>
+        <button type="submit">Enviar</button>
+      </form>
+    </section>
+  </div>
+</div>
+
+<script>
+  const usuarios = {
+   
+    wayner: {
+      nombre: 'Wayner Díaz Mora',
+      foto:'img/Wayner.jpg',
+      presentacion: 'Soy estudiante de Ingeniería en Sistemas, apasionado por el desarrollo web y la tecnología.',
+      educacion: [
+        'Bachiller en Ciencias y Letras',
+        'Actualmente cursando Ingeniería en Sistemas en la U',
+      ],
+      habilidades: ['HTML', 'CSS', 'JavaScript', 'Trabajo en equipo'],
+      experiencia: ['Práctica profesional en empresa X', 'Curso de desarrollo web'],
+      idiomas: ['Español (Nativo)', 'Inglés (Intermedio)'],
+      portafolio: [
+        {
+          titulo: 'APPLE',
+          descripcion: 'Página web para explorar productos, ver especificaciones y comprar dispositivos. Tecnologías: HTML, CSS, JavaScript, React.js.',
+          imagen: 'img/proy1.png',
+          enlace: '#',
+        },
+        {
+          titulo: 'APPLE MUSIC',
+          descripcion: 'Página web o app para explorar música, crear playlists y reproducir canciones en streaming. Tecnologías: HTML, CSS, JavaScript, React.js, Node.js.',
+          imagen: 'img/proy2.png',
+          enlace: '#',
+        },
+        {
+          titulo: 'TOYOTA',
+          descripcion: 'Página web para explorar modelos de autos, ver especificaciones técnicas y localizar concesionarios. Tecnologías: HTML, CSS, JavaScript, React.js, Node.js',
+          imagen: 'img/proy3.png',
+          enlace: '#',
+        }
+      ],
+    },
+    johana: {
+      nombre: 'Johana Agüero Serrano',
+       foto:'img/Johana.jpg',
+      presentacion: 'Estudiante de Ingeniería, con interés en diseño web y bases de datos.',
+      educacion: [
+        'Bachiller en Ciencias',
+        'Cursando Ingeniería en Sistemas',
+      ],
+      habilidades: ['CSS', 'JavaScript', 'SQL', 'Comunicación'],
+      experiencia: ['Práctica en empresa Y', 'Curso de base de datos'],
+      idiomas: ['Español (Nativo)', 'Francés (Básico)'],
+      portafolio: [
+        {
+          titulo: 'Glossier',
+          descripcion: 'Página web para gestionar promociones y novedades de productos de belleza. Tecnologías: HTML, CSS, JavaScript, React.js.',
+          imagen: 'img/proy4.png',
+          enlace: '#',
+        },
+        {
+          titulo: 'Disney Plus',
+          descripcion: 'Plataforma web y app para explorar películas y series, crear listas de favoritos y reproducir contenido en streaming. Tecnologías: HTML, CSS, JavaScript, React.js, Node.js.',
+          imagen: 'img/proy5.png',
+          enlace: '#',
+        },
+        {
+          titulo: 'Suzuki',
+          descripcion: 'Página web para explorar modelos de autos y motocicletas, ver especificaciones técnicas y localizar concesionarios. Tecnologías: HTML, CSS, JavaScript, React.js, Node.js.',
+          imagen: 'img/proy6.png',
+          enlace: '#',
+        }
+      ],
+    }
+  };
+
+  const pantallaInicio = document.getElementById('pantallaInicio');
+  const detallePerfil = document.getElementById('detallePerfil');
+  const nombreUsuario = document.getElementById('nombreUsuario');
+  const btnVolver = document.getElementById('btnVolver');
+  const secciones = document.querySelectorAll('.seccion-perfil');
+  const navBtns = document.querySelectorAll('nav.interno button');
+
+  // Mostrar perfil al hacer click en la tarjeta
+  document.querySelectorAll('.perfil-card').forEach(card => {
+    card.addEventListener('click', () => {
+      const usuario = card.getAttribute('data-usuario');
+      mostrarPerfil(usuario);
+    });
+  });
+
+  // Función para mostrar perfil y cargar datos
+  function mostrarPerfil(usuario) {
+    const datos = usuarios[usuario];
+    if(!datos) return;
+
+    pantallaInicio.style.display = 'none';
+    detallePerfil.style.display = 'block';
+    nombreUsuario.textContent = datos.nombre;
+
+    nombreUsuario.innerHTML = `
+  <img src="${datos.foto}" alt="Foto de ${datos.nombre}" 
+       style="width:80px; height:80px; border-radius:50%; vertical-align:middle; margin-right:10px;">
+  ${datos.nombre}
+`;
+
+    secciones.forEach(sec => {
+      sec.classList.remove('active');
+      if(sec.id === 'presentacion') {
+        sec.querySelector('p').textContent = datos.presentacion;
+      } else if (sec.id === 'educacion' || sec.id === 'habilidades' || sec.id === 'experiencia' || sec.id === 'idiomas') {
+        const ul = sec.querySelector('ul');
+        ul.innerHTML = '';
+        let items = [];
+        if(sec.id === 'educacion') items = datos.educacion;
+        else if(sec.id === 'habilidades') items = datos.habilidades;
+        else if(sec.id === 'experiencia') items = datos.experiencia;
+        else if(sec.id === 'idiomas') items = datos.idiomas;
+
+        items.forEach(i => {
+          const li = document.createElement('li');
+          li.textContent = i;
+          ul.appendChild(li);
+        });
+      } else if (sec.id === 'portafolio') {
+        const ul = sec.querySelector('ul');
+        ul.innerHTML = '';
+        datos.portafolio.forEach(proyecto => {
+          const li = document.createElement('li');
+          li.className = 'portafolio-card';
+
+          li.innerHTML = `
+            <img src="${proyecto.imagen}" alt="Imagen proyecto ${proyecto.titulo}" />
+            <h4>${proyecto.titulo}</h4>
+            <p>${proyecto.descripcion}</p>
+            <button onclick="alert('Más detalles del proyecto: ${proyecto.titulo}')">Ver más</button>
+          `;
+
+          ul.appendChild(li);
+        });
+      }
+      sec.style.display = 'none'; // ocultamos todas para luego activar solo una
+    });
+
+    mostrarSeccion('presentacion');
+  }
+
+  // Navegación interna por secciones
+  navBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      mostrarSeccion(btn.getAttribute('data-seccion'));
+    });
+  });
+
+  function mostrarSeccion(id) {
+    secciones.forEach(sec => {
+      if(sec.id === id) {
+        sec.style.display = 'block';
+        setTimeout(() => sec.classList.add('active'), 20);
+      } else {
+        sec.classList.remove('active');
+        sec.style.display = 'none';
+      }
+    });
+  }
+
+  // Botón volver a la pantalla inicio
+  btnVolver.addEventListener('click', () => {
+    detallePerfil.style.display = 'none';
+    pantallaInicio.style.display = 'flex';
+  });
+
+  // Validación simple formulario contacto
+  const formContacto = document.getElementById('form-contacto');
+  formContacto.addEventListener('submit', e => {
+    e.preventDefault();
+    alert('Mensaje enviado. ¡Gracias!');
+    formContacto.reset();
+  });
+</script>
+
+<footer>
+    
+  &copy; 2025 Wayner Mora & Johana Agüero
+
+</footer>
+
+</body>
+</html>

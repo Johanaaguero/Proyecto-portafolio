@@ -1,0 +1,252 @@
+    
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+      Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+    background-image: url('img/Fondo.jpg'); /* ruta de tu imagen */
+    background-size: cover; /* para que la imagen cubra toda la pantalla */
+    background-position: center; /* centrada */
+    background-attachment: fixed; /* para que no se mueva al hacer scroll */
+    color: #1c1c1e;
+    margin: 0; 
+    padding: 0;
+}
+
+  header {
+    background: #0e0d0d38;
+    padding: 1rem;
+    text-align: center;
+    color: #ffffff;
+    border-bottom-left-radius: 12px; border-bottom-right-radius: 12px;
+  }
+
+  .container {
+    max-width: 1000px;
+    margin: 1rem auto;
+    padding: 0 1rem;
+  }
+
+  .perfiles {
+    display: flex;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 80px;
+  }
+  .perfil-card {
+    background: rgba(255, 253, 253, 0.479);
+    color:hsl(219, 25%, 54%);
+    border-radius: 20px;
+    padding: 1.5rem;
+    width: 280px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.247), 0 1px 8px rgba(0, 0, 0, 0.226);
+    text-align: center;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  .perfil-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 24px rgba(0,0,0,0.2);
+  }
+  .perfil-card img {
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid #95c2ca;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.253);
+    margin-bottom: 1rem;
+    transition: transform 0.3s ease;
+  }
+  .perfil-card img:hover {
+    transform: scale(1.05);
+  }
+
+  #detallePerfil {
+    display: none;
+    max-width: 900px;
+    margin: 1rem auto;
+    background: rgba(255, 253, 253, 0.445);
+    padding: 2rem 3rem;
+    border-radius: 20px;
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.253);
+    
+  }
+
+#nombreUsuario {
+  display: flex;
+  align-items: center;
+  gap: 10px; 
+}
+
+#nombreUsuario img {
+  width: 60px; 
+  height: 60px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid #95c2ca;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.25);
+}
+  .perfil-card img {
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid #95c2ca;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.253);
+    margin-bottom: 1rem;
+    transition: transform 0.3s ease;
+  }
+  #detallePerfil h2 {
+    color: #598c99;
+    margin-top: 0;
+  }
+  nav.interno {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1rem;
+    flex-wrap: wrap;
+    margin-top: 20px;
+  }
+  nav.interno button {
+    background: #8caeee71;
+    color: rgb(15, 2, 63);
+    border: none;
+    padding: 0.6rem 1.4rem;
+    border-radius: 14px;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 1rem;
+    transition: background-color 0.25s ease;
+    box-shadow: 0 4px 8px rgba(3, 86, 100, 0.37);
+  }
+  nav.interno button:hover {
+    background: #01324198;
+    box-shadow: 0 6px 14px rgba(106, 85, 228, 0.692);
+  }
+  section.seccion-perfil {
+    background: rgba(255, 255, 255, 0.336);
+    border-radius: 16px;
+    box-shadow: 0 6px 12px rgba(0,0,0,0.07);
+    padding: 1.5rem 2rem;
+    margin-bottom: 2rem;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.4s ease, transform 0.4s ease;
+    will-change: opacity, transform;
+    display: none;
+  }
+  section.seccion-perfil.active {
+    opacity: 1;
+    transform: translateY(0);
+    display: block;
+  }
+  form {
+    display: flex;
+    flex-direction: column;
+    max-width: 400px;
+  }
+  input, textarea {
+    padding: 8px;
+    margin: 6px 0;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    font-family: inherit;
+  }
+  button[type="submit"] {
+    background: #8caeee71;
+    color: rgb(15, 2, 63);
+    border: none;
+    padding: 10px;
+    border-radius: 14px;
+    font-weight: 700;
+    cursor: pointer;
+    margin-top: 10px;
+    box-shadow: 0 4px 8px rgba(3, 86, 100, 0.37);
+    transition: background-color 0.25s ease;
+  }
+  button[type="submit"]:hover {
+    background: #8caeee71;
+    box-shadow: 0 6px 14px rgba(3, 86, 100, 0.37);
+  }
+  #btnVolver {
+    background: #8caeee71;
+    color: rgb(15, 2, 63);
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 14px;
+    cursor: pointer;
+    margin-bottom: 1rem;
+    font-weight: 700;
+    box-shadow: 0 4px 8px rgba(3, 86, 100, 0.37);
+    transition: background-color 0.25s ease;
+  }
+  #btnVolver:hover {
+    background: #31182f71;
+  }
+  /* Portafolio */
+  #portafolio ul {
+    list-style: none;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(260px,1fr));
+    gap: 1.5rem;
+  }
+  .portafolio-card {
+    background: rgba(0,122,255,0.3);
+    border-radius: 16px;
+    box-shadow: 0 6px 12px rgba(0,0,0,0.07);
+    padding: 1rem 1.2rem;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: default;
+  }
+  .portafolio-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 14px 28px rgba(0,0,0,0.15);
+  }
+  .portafolio-card img {
+    width: 100%;
+    border-radius: 12px;
+    object-fit: cover;
+    margin-bottom: 1rem;
+  }
+  .portafolio-card h4 {
+    margin: 0 0 0.5rem 0;
+    color: #1c1c1e;
+  }
+  .portafolio-card p {
+    flex-grow: 1;
+    font-size: 0.9rem;
+    color: #444;
+  }
+  .portafolio-card button {
+    margin-top: 1rem;
+    align-self: flex-start;
+    background: #8caeee71;
+    color: white;
+    border: none;
+    padding: 0.5rem 1.1rem;
+    border-radius: 14px;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 0.9rem;
+    box-shadow: 0 4px 8px rgba(0,122,255,0.3);
+    transition: background-color 0.25s ease;
+  }
+  .portafolio-card button:hover {
+    background: #005fcc;
+    box-shadow: 0 6px 14px rgba(251, 215, 158, 0.5);
+  }
+
+  footer {
+  text-align:center; 
+  padding: 1.5rem; 
+  background:#0e0d0d38; 
+  color:#ffffff; 
+  font-size: 0.9rem;
+   width: 100%; 
+   border-top-left-radius: 12px; 
+   border-top-right-radius: 12px;
+  margin-top: 50px;
+  }
